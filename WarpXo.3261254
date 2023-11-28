@@ -1,0 +1,23 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@batch2>
+Subject: Job 3261254: <WarpX> in cluster <summit> Exited
+
+Job <WarpX> was submitted from host <login2> by user <chang> in cluster <summit> at Wed Nov 22 02:17:06 2023
+Job was executed on host(s) <1*batch2>, in queue <batch>, as user <chang> in cluster <summit> at Wed Nov 22 02:17:31 2023
+                            <42*d08n03>
+                            <42*d08n04>
+</ccs/home/chang> was used as the home directory.
+</gpfs/alpine/proj-shared/csc143/chang> was used as the working directory.
+Started at Wed Nov 22 02:17:31 2023
+Terminated at Wed Nov 22 02:18:02 2023
+Results reported at Wed Nov 22 02:18:02 2023
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <WarpXe.3261254> for stderr output of this job.
+
