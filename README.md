@@ -17,3 +17,6 @@ cmake --build build_summit -j 8
 Then I try 'bsub summit_v100.bsub' and get the error.
 
 As for the input file, I have tested it on our own server and it can generate a small dataset smoothly.
+
+
+**Update: Even I try to only use CPU (see the last line of bsub), I still get the same error.**
