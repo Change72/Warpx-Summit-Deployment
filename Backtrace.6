@@ -1,0 +1,69 @@
+Host Name: h15n07
+=== If no file names and line numbers are shown below, one can run
+            addr2line -Cpfie my_exefile my_line_address
+    to convert `my_line_address` (e.g., 0x4a6b) into file name and line number.
+    Or one can use amrex/Tools/Backtrace/parse_bt.py.
+
+=== Please note that the line number reported by addr2line may not be accurate.
+    One can use
+            readelf -wl my_exefile | grep my_line_address'
+    to find out the offset for that line.
+
+ 0: ./warpx.3d() [0x105b61ac]
+    amrex::BLBackTrace::print_backtrace_info(_IO_FILE*) at ??:?
+
+ 1: ./warpx.3d() [0x105b8a60]
+    amrex::BLBackTrace::handler(int) at ??:?
+
+ 2: ./warpx.3d() [0x1057c504]
+    amrex::ParallelDescriptor::Abort(int, bool) at ??:?
+
+ 3: ./warpx.3d() [0x1052d08c]
+    amrex::Error_host(char const*, char const*) at ??:?
+
+ 4: ./warpx.3d() [0x1052d188]
+    amrex::Abort(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) at ??:?
+
+ 5: ./warpx.3d() [0x100b76d4]
+    amrex::Gpu::ErrorCheck(char const*, int) at ??:?
+
+ 6: ./warpx.3d() [0x10128ff4]
+    std::enable_if<(amrex::MaybeDeviceRunnable<__nv_dl_wrapper_t<__nv_dl_tag<void (FiniteDifferenceSolver::*)(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double), &(void FiniteDifferenceSolver::EvolveBCartesian<CartesianYeeAlgorithm>(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double)), 1u>, amrex::Array4<double> const, double const, amrex::Array4<double> const, double const* const restrict, int const, amrex::Array4<double> const, double const* const restrict, int const>, void>::value&&amrex::MaybeDeviceRunnable<__nv_dl_wrapper_t<__nv_dl_tag<void (FiniteDifferenceSolver::*)(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double), &(void FiniteDifferenceSolver::EvolveBCartesian<CartesianYeeAlgorithm>(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double)), 2u>, amrex::Array4<double> const, double const, amrex::Array4<double> const, double const* const restrict, int const, amrex::Array4<double> const, double const* const restrict, int const>, void>::value)&&amrex::MaybeDeviceRunnable<__nv_dl_wrapper_t<__nv_dl_tag<void (FiniteDifferenceSolver::*)(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double), &(void FiniteDifferenceSolver::EvolveBCartesian<CartesianYeeAlgorithm>(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double)), 3u>, amrex::Array4<double> const, double const, amrex::Array4<double> const, double const* const restrict, int const, amrex::Array4<double> const, double const* const restrict, int const>, void>::value, void>::type amrex::ParallelFor<256, __nv_dl_wrapper_t<__nv_dl_tag<void (FiniteDifferenceSolver::*)(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double), &(void FiniteDifferenceSolver::EvolveBCartesian<CartesianYeeAlgorithm>(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double)), 1u>, amrex::Array4<double> const, double const, amrex::Array4<double> const, double const* const restrict, int const, amrex::Array4<double> const, double const* const restrict, int const>, __nv_dl_wrapper_t<__nv_dl_tag<void (FiniteDifferenceSolver::*)(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double), &(void FiniteDifferenceSolver::EvolveBCartesian<CartesianYeeAlgorithm>(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double)), 2u>, amrex::Array4<double> const, double const, amrex::Array4<double> const, double const* const restrict, int const, amrex::Array4<double> const, double const* const restrict, int const>, __nv_dl_wrapper_t<__nv_dl_tag<void (FiniteDifferenceSolver::*)(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double), &(void FiniteDifferenceSolver::EvolveBCartesian<CartesianYeeAlgorithm>(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double)), 3u>, amrex::Array4<double> const, double const, amrex::Array4<double> const, double const* const restrict, int const, amrex::Array4<double> const, double const* const restrict, int const> >(amrex::Gpu::KernelInfo const&, amrex::Box const&, amrex::Box const&, amrex::Box const&, __nv_dl_wrapper_t<__nv_dl_tag<void (FiniteDifferenceSolver::*)(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double), &(void FiniteDifferenceSolver::EvolveBCartesian<CartesianYeeAlgorithm>(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double)), 1u>, amrex::Array4<double> const, double const, amrex::Array4<double> const, double const* const restrict, int const, amrex::Array4<double> const, double const* const restrict, int const>&&, __nv_dl_wrapper_t<__nv_dl_tag<void (FiniteDifferenceSolver::*)(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double), &(void FiniteDifferenceSolver::EvolveBCartesian<CartesianYeeAlgorithm>(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double)), 2u>, amrex::Array4<double> const, double const, amrex::Array4<double> const, double const* const restrict, int const, amrex::Array4<double> const, double const* const restrict, int const>&&, __nv_dl_wrapper_t<__nv_dl_tag<void (FiniteDifferenceSolver::*)(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double), &(void FiniteDifferenceSolver::EvolveBCartesian<CartesianYeeAlgorithm>(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double)), 3u>, amrex::Array4<double> const, double const, amrex::Array4<double> const, double const* const restrict, int const, amrex::Array4<double> const, double const* const restrict, int const>&&) at ??:?
+
+ 7: ./warpx.3d() [0x10129aa0]
+    void FiniteDifferenceSolver::EvolveBCartesian<CartesianYeeAlgorithm>(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, int, double) at ??:?
+
+ 8: ./warpx.3d() [0x10127724]
+    FiniteDifferenceSolver::EvolveB(std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> > const&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul> const&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::MultiFab, std::default_delete<amrex::MultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::iMultiFab, std::default_delete<amrex::iMultiFab> >, 3ul>&, std::array<std::unique_ptr<amrex::LayoutData<FaceInfoBox>, std::default_delete<amrex::LayoutData<FaceInfoBox> > >, 3ul>&, int, double) at ??:?
+
+ 9: ./warpx.3d() [0x10110fb8]
+    WarpX::EvolveB(int, PatchType, double, DtType) at ??:?
+
+10: ./warpx.3d() [0x101111b4]
+    WarpX::EvolveB(int, double, DtType) at ??:?
+
+11: ./warpx.3d() [0x10111304]
+    WarpX::EvolveB(double, DtType) at ??:?
+
+12: ./warpx.3d() [0x100e0608]
+    WarpX::OneStep_nosub(double) at ??:?
+
+13: ./warpx.3d() [0x100e40ec]
+    WarpX::Evolve(int) at ??:?
+
+14: ./warpx.3d() [0x10031304]
+    main at ??:?
+
+15: /lib64/power9/libc.so.6(+0x24078) [0x200011ba4078]
+
+16: /lib64/power9/libc.so.6(__libc_start_main+0xb4) [0x200011ba4264]
+
+
+===== TinyProfilers ======
+main()
+REG::WarpX::Evolve()
+WarpX::Evolve()
+WarpX::Evolve::step
+WarpX::OneStep_nosub()
+WarpX::EvolveB()
+
